@@ -1,0 +1,11 @@
+{
+  "name": "client",
+  "version": "1.0.0",
+  "description": "Client que mostrar los procesos de la maquinas virtuales y los recurso como procesado y ram, la finalidad de este es ser un monitor de procesos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Juan José Lemus Vásquez",
+  "license": "MIT"
+}
