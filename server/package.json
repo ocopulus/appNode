@@ -9,11 +9,11 @@
   },
   "author": "Juan José Lemus Vásquez",
   "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.17.1"
+  },
   "dependencies": {
     "express": "^4.16.2",
     "socket.io": "^2.0.4"
-  },
-  "devDependencies": {
-    "nodemon": "^1.17.1"
   }
 }
