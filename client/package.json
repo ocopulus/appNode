@@ -4,8 +4,14 @@
   "description": "Client que mostrar los procesos de la maquinas virtuales y los recurso como procesado y ram, la finalidad de este es ser un monitor de procesos",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main.js"
   },
   "author": "Juan José Lemus Vásquez",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "nodemon": "^1.17.1",
+    "socket.io": "^2.0.4"
+  }
 }
