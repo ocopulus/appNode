@@ -12,11 +12,15 @@ app.get('/hola' , function(req, res){
 
 io.on('connection', function(socket){
 	console.log('Alguin se a conectado con Sockets');
-	socket.emit('messages', {
-		id: 1,
-		text: "hola soy un mensaje",
-		author: "Juan Jose"
-	})
+	let archvo = fs.readFileSync('/home/juan/hola.txt', 'utf-8');
+	console.log(archvo);
+	socket.emit('messages', [{id:1, nombre:'juan'},{id:2, nombre: 'jose'}]);
+
+	io.on('getMemoria', function(data){
+		let memoria = fs.readFileSync('/proc/me_201404412', 'utf-8');
+		console.log('enviardo inf memoria: '+memoria);
+		socket.emit('setMemoria', memoria);
+	});
 });
 
 server.listen(8080, function(){
