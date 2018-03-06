@@ -9,7 +9,7 @@ app.use(express.static('public'));
 io.on('connection', function(socket){
 	console.log('Alguin se a conectado con Sockets');
 	//socket.emit('messages', [{id:1, nombre:'juan'},{id:2, nombre: 'jose'}]);
-	io.on('getMemoria', function(data){
+	socket.on('getMemoria', function(data){
 		console.log('archivo');
 		let memoria = fs.readFileSync('/proc/me_201404412', 'utf-8');
 		console.log('enviardo inf memoria: '+memoria);
