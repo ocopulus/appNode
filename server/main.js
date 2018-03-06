@@ -12,7 +12,7 @@ app.get('/hola' , function(req, res){
 
 io.on('connection', function(socket){
 	console.log('Alguin se a conectado con Sockets');
-	socket.emit('messages', [{id:1, nombre:'juan'},{id:2, nombre: 'jose'}]);
+	//socket.emit('messages', [{id:1, nombre:'juan'},{id:2, nombre: 'jose'}]);
 	io.on('getMemoria', function(data){
 		let memoria = fs.readFileSync('/proc/me_201404412', 'utf-8');
 		console.log('enviardo inf memoria: '+memoria);
