@@ -3,6 +3,7 @@ var app = express();
 var server = require('http').Server(app);
 var io = require('socket.io').listen(server);
 var fs = require('fs');
+const { exec } = require('child_process');
 
 app.use(express.static('public'));
 
@@ -21,6 +22,18 @@ io.on('connection', function(socket){
 		let proc = fs.readFileSync('/proc/proc_201404412', 'utf-8');
 		console.log('procesos enviados');
 		socket.emit('setProc', proc);
+	});
+
+	socket.on('getCPU',function(data){
+		exec('cat /proc/stat', (error, stdout, stderr) => {
+		  if (error) {
+		    console.error(`exec error: ${error}`);
+		    return;
+		  }
+		  console.log(`stdout: ${stdout}`);
+		  socket.emit('setCPU',stdout);
+		  //console.log(`stderr: ${stderr}`);
+		});
 	});
 });
 
