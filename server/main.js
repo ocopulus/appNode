@@ -30,7 +30,7 @@ io.on('connection', function(socket){
 		    console.error(`exec error: ${error}`);
 		    return;
 		  }
-		  console.log(`stdout: ${stdout}`);
+		  //console.log(`stdout: ${stdout}`);
 		  socket.emit('setCPU',stdout);
 		  //console.log(`stderr: ${stderr}`);
 		});

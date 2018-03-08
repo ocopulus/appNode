@@ -39,4 +39,4 @@ function pedirProc(){
 
 window.setInterval(function(){
 	pedirProc();
-},10000);
+},5000);
