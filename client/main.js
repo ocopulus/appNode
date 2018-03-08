@@ -18,6 +18,10 @@ app.get('/memoria', (req, res)=>{
 	res.render('memoria');
 });
 
+app.get('/procesos', (req, res)=>{
+	res.render('proc');
+});
+
 
 server.listen(8080, function(){
 	console.log('Servidor corriendo en http://localhost:8080')
