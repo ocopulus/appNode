@@ -20,7 +20,7 @@ io.on('connection', function(socket){
 		console.log('getProc');
 		let proc = fs.readFileSync('/proc/proc_201404412', 'utf-8');
 		console.log('procesos enviados');
-		socket.emit('setProc');
+		socket.emit('setProc', proc);
 	});
 });
 
